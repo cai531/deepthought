@@ -1,0 +1,143 @@
+nav {
+  border-bottom: 1px solid black;
+  border-color: #ddd;
+  height: 60px;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 15px -10px #ccc;
+  box-shadow: 0 1px 15px -10px #ccc;
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.4s ease;
+  z-index: 1000;
+
+  .logo {
+    height: 100%;
+    display: inline-block;
+    border-right: 1px solid black;
+    border-color: #ddd;
+    padding: 0 60px;
+    position: relative;
+
+    h1 {
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+      color: #555;
+      font-size: 30px;
+      line-height: 60px;
+    }
+  }
+
+  .dropdown-toggle {
+    display: none;
+  }
+
+  ul {
+    float: right;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    margin-right: 80px;
+    li {
+      list-style: none;
+      display: inline-block;
+      height: 100%;
+      padding: 0 20px;
+
+      a {
+        font-family: Raleway, sans-serif;
+        font-weight: 600;
+        display: inline-block;
+        height: 100%;
+        text-transform: uppercase;
+        font-size: 15px;
+        text-decoration: none;
+        color: #666;
+        line-height: 60px;
+
+        &:hover {
+          color: #000;
+//          border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+        }
+      }
+
+      &.active a {
+        font-weight: 800;
+        color: #D95B43;
+        &:hover {
+          color: #D95B43;
+        }
+      }
+    }
+  }
+
+  &.transparent {
+    height: 100px;
+    background: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+
+    .logo {
+      border-color: rgba(255, 255, 255, 0.3);
+      padding: 0 100px;
+
+      h1 {
+        color: #fff;
+        font-size: 40px;
+        line-height: 100px;
+      }
+    }
+
+    ul li {
+      a {
+        line-height: 100px;
+        color: #ddd;
+
+        &:hover {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+        }
+      }
+      &.active a {
+        color: #fff;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &.mobile-nav {
+    position: absolute;
+    height: 100px;
+
+    .logo {
+      left: 50%;
+      transform: translateX(-50%);
+
+      h1 {
+        color: #333;
+        font-size: 40px;
+      }
+    }
+
+    .dropdown-toggle {
+      display: inline-block;
+      position: absolute;
+      left: 15%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #333;
+      font-size: 15px;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+}
