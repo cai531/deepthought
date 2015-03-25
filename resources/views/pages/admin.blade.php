@@ -41,7 +41,7 @@
         }
 
         setInterval(function(){
-            $.get("status.json", updateStatus);
+            $.get("status.json", updateStatus, dataType='json');
             $.get("sma_graph.txt", updateGraph);
         }, 500);
     </script>
