@@ -28,7 +28,13 @@
         var plot = $.plot($(".sma-graph"), [[]]);
 
         function updateGraph(response) {
-            var json = JSON.parse("[" + response.slice(0, -1) + "]");
+            try{
+                var json = JSON.parse("[" + response.slice(0, -1) + "]");
+            }catch(err){
+                console.error(err);
+                console.log("AJAX Response: " + response);
+            }
+
             var data = $.makeArray(json);
             plot.setData([data]);
             plot.setupGrid();
