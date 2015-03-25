@@ -16,7 +16,7 @@
 
 @section("footer")
     <script>
-        function updateStatus(response){
+        function updateStatus(status){
             $("span.status-duration").html(millisecondsToStr(status.duration*1000));
             $("span.status-tweets-collected").html(commafy(status.total_tweets));
             $("span.status-fp").html(status.file_path);
