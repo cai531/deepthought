@@ -5,10 +5,10 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class LiveController extends Controller {
+class AdminController extends Controller {
 
     public function index(){
-        return view("pages.live");
-	}   
+        return view("pages.admin");
+    }
 
 }

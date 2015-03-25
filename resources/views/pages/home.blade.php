@@ -22,6 +22,7 @@
         </div>
         <img src="img/icon.png" class="home-icon animated slideInUp">
     </header>
+    <div class="crawler-status"><pre></pre></div>
 @stop
 
 @section("footer")
@@ -35,6 +36,7 @@
                 $('nav').addClass('transparent');
             }
         });
+
     </script>
 
 @stop
