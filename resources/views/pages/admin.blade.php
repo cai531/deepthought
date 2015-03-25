@@ -17,7 +17,12 @@
 @section("footer")
     <script>
         function updateStatus(response){
-            var status = JSON.parse(response);
+            try{
+                var status = JSON.parse(response);
+            }catch(err){
+                console.error(err);
+                console.log("AJAX Response: " + response);
+            }
             $("span.status-duration").html(millisecondsToStr(status.duration*1000));
             $("span.status-tweets-collected").html(commafy(status.total_tweets));
             $("span.status-fp").html(status.file_path);
