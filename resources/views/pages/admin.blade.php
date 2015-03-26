@@ -40,9 +40,9 @@
             plot.draw();
         }
 
+        $.get("sma_graph.txt", updateGraph);
         setInterval(function(){
             $.get("status.json", updateStatus, dataType='json');
-            $.get("sma_graph.txt", updateGraph);
         }, 500);
     </script>
 @stop

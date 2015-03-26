@@ -21,7 +21,7 @@
     <a href="#" class="dropdown-toggle"><i class="fa fa-list"></i></a>
 
     <div class="logo">
-        <h1>thought</h1>
+        <h1>deepthought</h1>
     </div>
     <ul>
         <li class="{{ Request::is('home*')?'active':'' }}"><a href="/">Home</a></li>
