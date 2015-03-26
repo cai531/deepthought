@@ -24,7 +24,11 @@
         }
 
         var graphLength = 1000;
-        var plot = $.plot($(".sma-graph"), [[]]);
+        var plot = $.plot($(".sma-graph"), [[]], {
+            series: {
+                shadowSize: 0
+            }
+        });
 
         function updateGraph(response) {
             try{

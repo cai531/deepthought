@@ -1,8 +1,8 @@
 nav {
   height: 60px;
   background: #fff;
-  -webkit-box-shadow: 0 1px 15px -10px #ccc;
-  box-shadow: 0 1px 15px -10px #ccc;
+  -webkit-box-shadow: 0 1px 20px -10px #ccc;
+  box-shadow: 0 1px 20px -10px #ccc;
   display: inline-block;
   position: fixed;
   top: 0;
@@ -10,6 +10,7 @@ nav {
   width: 100%;
   transition: all 0.4s ease;
   z-index: 1000;
+  border-bottom: 3px solid #83AF9B;
 
   *{ transition: all 0.4s ease; }
 
@@ -24,7 +25,7 @@ nav {
       letter-spacing: -2px;
       text-align: center;
       margin: 0;
-      color: #444;
+      color: #555;
       font-size: 30px;
       line-height: 60px;
     }
@@ -45,7 +46,6 @@ nav {
       list-style: none;
       display: inline-block;
       height: 100%;
-      padding: 0 20px;
 
       a {
         font-family: Raleway, sans-serif;
@@ -57,17 +57,19 @@ nav {
         text-decoration: none;
         color: #555;
         line-height: 60px;
+        padding: 0 30px;
 
         &:hover {
-          color: #000;
+          color: #83AF9B;
         }
       }
 
       &.active a {
         font-weight: 800;
-        color: #83AF9B;
+        color: #fff;
+        background: #83AF9B;
         &:hover {
-          color: #83AF9B;
+          color: #fff;
         }
       }
     }
@@ -77,6 +79,7 @@ nav {
     height: 100px;
     background: rgba(255,255,255,0.1);
     box-shadow: none;
+    border: none;
 
     .logo {
       padding: 0 100px;
@@ -94,11 +97,13 @@ nav {
         color: #ddd;
 
         &:hover {
+          background: rgba(255,255,255,0.2);
           border-bottom: 1px solid rgba(255, 255, 255, 0.4);
         }
       }
       &.active a {
         color: #fff;
+        background: none;
         &:hover {
           color: #fff;
         }
