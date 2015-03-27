@@ -9,8 +9,10 @@
             <li><b>Currently writing to:</b> <span class="status-fp">-</span></li>
             <li><b>Current file size:</b> <span class="status-file-size">-</span></li>
         </ul>
-        <h1 class="sma-graph-title">Graph of SMA against Time/S</h1>
-        <div class="sma-graph"></div>
+        <div class="graph">
+            <h1 class="sma-graph-title">Graph of SMA against Time/S</h1>
+            <div class="sma-graph"></div>
+        </div>
     </div>
 @stop
 

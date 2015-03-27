@@ -23,7 +23,7 @@
     <div class="logo">
         <h1>deepthought</h1>
     </div>
-    <ul>
+    <ul class="animated">
         <li class="{{ Request::is('home*')?'active':'' }}"><a href="/">Home</a></li>
         <li class="{{ Request::is('trends*')?'active':'' }}"><a href="/trends">Trends</a></li>
         <li class="{{ Request::is('search*')?'active':'' }}"><a href="/search">Search</a></li>
@@ -38,6 +38,7 @@
 <!--===== Scripts ======-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/vendor/flot/jquery.flot.js"></script>
+<script src="js/vendor/blur.min.js"></script>
 <script src="js/app.js"></script>
 <!--===== Page Specific Scripts ======-->
 @yield("footer")

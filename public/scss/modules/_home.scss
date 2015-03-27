@@ -5,7 +5,7 @@ header {
   height: 100%;
   top: 0;
   left: 0;
-  color: #fff;
+  color: $white-1;
   position: relative;
 
   .intro {
@@ -17,8 +17,6 @@ header {
 
     h1 {
       font-size: 60px;
-      font-family: Raleway, sans-serif;
-      letter-spacing: 2px;
       margin-bottom: 20px;
       text-transform: uppercase;
     }
@@ -28,13 +26,13 @@ header {
       text-align: justify;
       font-size: 21px;
       line-height: 26px;
-      color: #ddd;
+      color: $white-2;
 
       b {
-        color: #F9CDAD;
+        color: $accent-1;
       }
       a {
-        color: #69D2E7;
+        color: $clr-light-blue-200;
       }
     }
   }
@@ -61,4 +59,13 @@ header {
       display: none;
     }
   }
-}	
+}
+
+@media (max-width: 600px) {
+  header .intro{
+    display: block;
+
+    h1{ text-align: center; }
+    p{ width: 84%; padding: 0 8%; }
+  }
+}

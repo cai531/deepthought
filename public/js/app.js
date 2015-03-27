@@ -1,12 +1,24 @@
 $(document).ready(function () {
-    if ($(window).width() < 1000) $('nav').addClass('mobile-nav');
-    else $('nav').removeClass('mobile-nav');
+    if ($(window).width() < 1000) {
+        var nav = $("nav");
+        nav.addClass("mobile-nav");
+        $('nav .dropdown-toggle').on("touchstart", function () {
+            var ul = $("nav ul");
+            if(ul.css("display")=="none"){
+                if(nav.hasClass("transparent")){
+                    ul.blurjs({
+                        'source': 'header',
+                        cache: true,
+                        debug: true
+                    });
+                }
+                ul.css("display","block");
+            }else{
+                ul.css("display","none");
+            }
 
-});
-
-$(window).resize(function () {
-    if ($(window).width() < 1000) $('nav').addClass('mobile-nav');
-    else $('nav').removeClass('mobile-nav');
+        });
+    }
 });
 
 /*******************
