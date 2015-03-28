@@ -279,19 +279,26 @@ nav.mobile-nav ul li.active a {
   padding-top: 100px;
 }
 .crawler-status .info {
-  margin-bottom: 100px;
-  background: rgba(255, 255, 255, 0.30);
-  padding: 50px;
-  display: inline-block;
+  margin-bottom: 50px;
+  display: block;
 }
 .crawler-status .info li {
   color: rgba(0, 0, 0, 0.87);
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.30);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
   font-size: 20px;
-  margin: 10px 0;
-}
-.crawler-status .info li b {
-  color: rgba(0, 0, 0, 0.54);
   font-weight: 600;
+  margin-right: 20px;
+}
+.crawler-status .info li i {
+  background: #424242;
+  color: #fff;
+  font-size: 20px;
+  padding: 15px;
+}
+.crawler-status .info li span {
+  padding: 25px;
 }
 .crawler-status h1 {
   color: ;
@@ -303,6 +310,7 @@ nav.mobile-nav ul li.active a {
 .crawler-status .graph {
   display: block;
   background: rgba(255, 255, 255, 0.30);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
   padding: 50px;
 }
 .crawler-status .graph .sma-graph {

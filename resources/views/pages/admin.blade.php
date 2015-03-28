@@ -3,15 +3,13 @@
 @section("content")
     <div class="crawler-status">
         <ul class="info">
-            <h1>General Info</h1>
-            <li><b>Duration:</b> <span class="status-duration">-</span></li>
-            <li><b>Tweets Collected:</b> <span class="status-tweets-collected">-</span></li>
-            <li><b>Currently writing to:</b> <span class="status-fp">-</span></li>
-            <li><b>Current file size:</b> <span class="status-file-size">-</span></li>
+            <li><i class="fa fa-clock-o"></i><span class="status-duration">-</span></li>
+            <li><i class="fa fa-twitter"></i><span class="status-tweets-collected">-</span></li>
+            <li><i class="fa fa-file-archive-o"></i><span class="status-fp">-</span></li>
+            <li><i class="fa fa-arrows-alt"></i><span class="status-file-size">-</span></li>
         </ul>
         <div class="graph">
             <h1 class="sma-graph-title">Graph of SMA against Time/S</h1>
-
             <div class="sma-graph"></div>
         </div>
     </div>
@@ -27,44 +25,13 @@
         }
 
         var graphLength = 1000;
-        var plot = $.plot($(".sma-graph"), [[]], {
+        var opts = {
             series: {
                 shadowSize: 0,
-                lines: {
-                    show: true
-                },
-                points: {
-                    show: true
-                }
-            },
-            grid: {
-                hoverable: true,
-                clickable: true
+                color: '#00acc1'
             }
-        });
-        
-        $("<div id='tooltip'></div>").css({
-            position: "absolute",
-            display: "none",
-            border: "1px solid #fdd",
-            padding: "2px",
-            "background-color": "#fee",
-            opacity: 0.80
-        }).appendTo(".graph");
-
-        $(".sma-graph").bind("plothover", function (event, pos, item) {
-            if (item) {
-                var x = item.datapoint[0].toFixed(2),
-                        y = item.datapoint[1].toFixed(2);
-
-                $("#tooltip").html("(" + x + ", " + y + ")")
-                        .css({top: item.pageY + 5, left: item.pageX + 5})
-                        .fadeIn(200);
-            } else {
-                $("#tooltip").hide();
-            }
-        });
-
+        };
+        var plot = $.plot($(".sma-graph"), [[]], opts);
 
         function updateGraph(response) {
             try {
@@ -84,5 +51,10 @@
         setInterval(function () {
             $.get("status.json", updateStatus, dataType = 'json');
         }, 500);
+        $(window).resize(function(){
+            console.log("redrawing graph");
+            plot = $.plot($('.sma-graph'), [[]], opts);
+            $.get("sma_graph.txt", updateGraph);
+        });
     </script>
 @stop
