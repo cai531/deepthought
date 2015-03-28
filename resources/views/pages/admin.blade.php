@@ -11,6 +11,7 @@
         </ul>
         <div class="graph">
             <h1 class="sma-graph-title">Graph of SMA against Time/S</h1>
+
             <div class="sma-graph"></div>
         </div>
     </div>
@@ -18,8 +19,8 @@
 
 @section("footer")
     <script>
-        function updateStatus(status){
-            $("span.status-duration").html(millisecondsToStr(status.duration*1000));
+        function updateStatus(status) {
+            $("span.status-duration").html(millisecondsToStr(status.duration * 1000));
             $("span.status-tweets-collected").html(commafy(status.total_tweets));
             $("span.status-fp").html(status.file_path);
             $("span.status-file-size").html(bytesToStr(status.file_size));
@@ -28,14 +29,47 @@
         var graphLength = 1000;
         var plot = $.plot($(".sma-graph"), [[]], {
             series: {
-                shadowSize: 0
+                shadowSize: 0,
+                lines: {
+                    show: true
+                },
+                points: {
+                    show: true
+                }
+            },
+            grid: {
+                hoverable: true,
+                clickable: true
+            }
+        });
+        
+        $("<div id='tooltip'></div>").css({
+            position: "absolute",
+            display: "none",
+            border: "1px solid #fdd",
+            padding: "2px",
+            "background-color": "#fee",
+            opacity: 0.80
+        }).appendTo(".graph");
+
+        $(".sma-graph").bind("plothover", function (event, pos, item) {
+            if (item) {
+                var x = item.datapoint[0].toFixed(2),
+                        y = item.datapoint[1].toFixed(2);
+
+                $("#tooltip").html("(" + x + ", " + y + ")")
+                        .css({top: item.pageY + 5, left: item.pageX + 5})
+                        .fadeIn(200);
+            } else {
+                $("#tooltip").hide();
             }
         });
 
+
         function updateGraph(response) {
-            try{
+            try {
                 var json = JSON.parse("[" + response.slice(0, -1) + "]");
-            }catch(err){
+            } catch (err) {
                 console.error(err);
                 console.log("AJAX Response: " + response);
             }
@@ -47,8 +81,8 @@
         }
 
         $.get("sma_graph.txt", updateGraph);
-        setInterval(function(){
-            $.get("status.json", updateStatus, dataType='json');
+        setInterval(function () {
+            $.get("status.json", updateStatus, dataType = 'json');
         }, 500);
     </script>
 @stop
