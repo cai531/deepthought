@@ -1,0 +1,13 @@
+footer{
+  margin: 0;
+
+  .container{
+    width: 85%;
+  }
+}
+
+@media #{$medium-and-down} {
+ footer{
+   padding: 0;
+ }
+}

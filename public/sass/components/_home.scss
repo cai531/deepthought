@@ -1,0 +1,232 @@
+.home-jumbotron{
+  background: $primary-color;
+  margin: 0;
+  padding: 50px 0;
+  padding-top: 80px;
+  color: $white-1;
+
+  h1{
+    margin: 0;
+    font-weight: 300;
+  }
+
+  p.info{
+    font-size: 22px;
+    color: $white-2;
+  }
+
+  p.version{
+    color: $white-3;
+    margin: 0;
+  }
+
+  a.start-btn{
+    background-color: $primary-color-light;
+    width: 260px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.github-info{
+  @extend .grey, .darken-2;
+  padding: 14px 0;
+  height: 64px;
+  line-height: 36px;
+  color: #e6e6e6;
+
+  .container{
+    width: 85%;
+  }
+
+  p{
+    display: inline;
+  }
+
+  p.latestcommit{
+    span{
+      margin-left: 15px;
+    }
+
+    span.commit-sha a{
+      color: #E3F2FD !important;
+
+      &:hover,&:active,&:focus{
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  .github-link{
+    background: #6f6d6d;
+    display: inline;
+  }
+}
+
+.home-intro{
+  padding-top: 80px;
+
+  .container{
+    width: 85%;
+
+    .row{
+      margin-bottom: 0;
+    }
+  }
+
+  div.left{
+    width: 50%;
+  }
+
+  h2{
+    font-size: 34px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 700;
+
+    &:after{
+      content: '';
+      display: block;
+      margin-top: 40px;
+      width: 40px;
+      border-top: 2px solid #444;
+    }
+  }
+
+  p{
+    max-width: 500px;
+    font-size: 18px;
+    text-align: justify;
+
+    b{
+      color: $secondary-color;
+    }
+  }
+
+  img{
+    height: 300px;
+  }
+}
+
+.home-features{
+  z-index: 10;
+  padding: 50px 0;
+  background: #F9F9F9;
+
+  .container{
+    width: 85%;
+  }
+
+  .col{
+    text-align: center;
+  }
+
+  i{
+    display: block;
+    font-size: 7rem;
+    color: $primary-color;
+  }
+
+  h3{
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin: 0;
+    color: rgba(0,0,0,0.71);
+  }
+}
+
+.home-rationale{
+  padding: 50px 0;
+
+  h2{
+    font-size: 34px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+
+    b{ color: $primary-color-dark; }
+  }
+
+  p{
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+    color: $black-2;
+
+    &:after{
+      content: '';
+      display: block;
+      width: 40px;
+      margin: 40px auto;
+      border-top: 2px solid #444;
+    }
+  }
+
+  img{
+    height: 200px;
+    position: absolute;
+    top: 25px; // 125 - 1/2 * height
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .container{
+    width: 85%;
+  }
+
+  div.col.m4{
+    height: 250px;
+    position: relative;
+  }
+
+  div.reason{
+    display: block;
+    height: 33%;
+    padding-right: 20px;
+    position: relative;
+
+    i{
+      font-size: 42px;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    }
+
+    span{
+      display: block;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #333;
+      text-align: right;
+      position: absolute;
+      top: 50%;
+      right: 60px;
+      transform: translateY(-50%);
+
+      b{
+        color: $secondary-color;
+      }
+    }
+  }
+
+  .right-rationale{
+    i{
+      left: 0;
+    }
+
+    span{
+      text-align: left!important;
+      left: 60px;
+    }
+  }
+}

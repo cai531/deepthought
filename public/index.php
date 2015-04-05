@@ -35,12 +35,6 @@ require __DIR__.'/../bootstrap/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 
-/*
- * Compile SASS files
- *
- * */
-SassCompiler::run("scss/", "css/"); //, "scss_formatter_compressed"
-
 
 /*
 |--------------------------------------------------------------------------
