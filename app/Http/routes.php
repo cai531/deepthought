@@ -17,3 +17,5 @@ Route::get("/latestcommit.json", "HomeController@getLatestCommit");
 Route::get("/trends", "TrendsController@index");
 Route::get("/search", "SearchController@index");
 Route::get("/crawler", "CrawlerController@index");
+Route::get("/crawler/status.json", "CrawlerController@getStatus");
+Route::get("/debug", "DebugController@index");

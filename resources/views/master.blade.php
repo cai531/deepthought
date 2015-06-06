@@ -84,9 +84,9 @@
             <div class="col l4 offset-l1 s12">
                 <h5 class="white-text">Development Team</h5>
                 <ul>
-                    <li class="grey-text text-lighten-3">Kaian - <b>Website</b> and <b>Cralwer</b></li>
+                    <li class="grey-text text-lighten-3">Max - <b>Group leader</b></li>
+                    <li class="grey-text text-lighten-3">Kaian - <b>Website</b>, <b>Crawler</b> and <b>Spike Detection</b></li>
                     <li class="grey-text text-lighten-3">Zheng Yang - <b>Crawler</b> and <b>Main Analysis Module</b></li>
-                    <li class="grey-text text-lighten-3">Max - <b>Group leader</b> and <b>Design</b></li>
                 </ul>
             </div>
         </div>
@@ -94,7 +94,7 @@
     <div class="footer-copyright">
         <div class="container">
             &copy 2015 DeepThought
-            <a class="grey-text text-lighten-4 right" href="https://github.com/depressedsheep/twitter-deepthought/blob/master/LICENSE">LICENSE</a>
+            <a class="grey-text text-lighten-4 right" href="https://github.com/depressedsheep/twitter-deepthought/blob/master/LICENSE" target="_blank">LICENSE</a>
         </div>
     </div>
 </footer>

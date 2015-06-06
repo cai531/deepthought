@@ -17,23 +17,20 @@
 @section("content")
     <section class="home-intro">
         <div class="container clearfix">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h2>Welcome to deepthought</h2>
+            <div class="intro-details">
+                <h2>Welcome to deepthought</h2>
 
-                    <p>
-                        Deepthought is a project that aims to provide <b>interactive</b> and <b>helpful</b> models of
-                        <b>data
-                            trends</b> collected from the
-                        social networking service, <a target="_blank" href="https://twitter.com/">twitter.com</a>, and
-                        apply <b>statistical
-                            and computational tools</b> in order to gauge
-                        how internet users think
-                    </p>
-                </div>
-
-                <div class="col l6 hide-on-small-only"><img src="img/home-intro.png" class="right home-icon"></div>
+                <p>
+                    Deepthought is a project that aims to provide <b>interactive</b> and <b>helpful</b> models of
+                    <b>data
+                        trends</b> collected from the
+                    social networking service, <a target="_blank" href="https://twitter.com/">twitter.com</a>, and
+                    apply <b>statistical
+                        and computational tools</b> in order to gauge
+                    how internet users think
+                </p>
             </div>
+            <div class="intro-img"><img src="/img/home-intro.png"></div>
         </div>
     </section>
     <section class="home-features">
@@ -66,11 +63,10 @@
     <section class="home-rationale">
         <div class="container">
             <h2><b>Why</b> Data Analytics?</h2>
-
             <p>What's our rationale for doing a data analytics project? Why is this website/tool useful?</p>
 
             <div class="row">
-                <div class="col m4 s12 left-rationale">
+                <div class="left-rationale">
                     <div class="reason">
                         <i class="mdi-social-poll"></i>
                         <span>Quantify<br><b>political issues</b></span>
@@ -84,8 +80,8 @@
                         <span>Facilitate<br><b>disaster response</b></span>
                     </div>
                 </div>
-                <div class="col m4 s12"><img class="circle" src="/img/twitter.png"></div>
-                <div class="col m4 s12 right-rationale">
+                <div class="twitter-logo"><img class="circle" src="/img/twitter.png"></div>
+                <div class="right-rationale">
                     <div class="reason">
                         <i class="mdi-social-poll"></i>
                         <span>Structure data &<br><b>view trends</b></span>

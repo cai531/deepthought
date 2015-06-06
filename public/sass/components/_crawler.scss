@@ -1,0 +1,22 @@
+.crawler-status{
+  padding: 0;
+
+  li.col{
+    display: inline-block !important;
+    background: $secondary-color;
+    color: $white-1;
+    padding: 0 !important;
+
+    i{
+      background: $secondary-color-dark;
+      padding: 5px 10px;
+      display: inline-block;
+    }
+
+    span{
+      font-size: 18px;
+      display: inline-block;
+      padding: 5px 10px;
+    }
+  }
+}

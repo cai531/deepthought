@@ -68,18 +68,27 @@
 }
 
 .home-intro{
-  padding-top: 80px;
+  padding-top: 50px;
 
   .container{
     width: 85%;
+    position: relative;
+    min-height: 360px;
 
-    .row{
-      margin-bottom: 0;
+    .intro-details{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: inline-block;
+      margin-bottom: 50px;
     }
-  }
 
-  div.left{
-    width: 50%;
+    .intro-img{
+      position: absolute;
+      display: inline-block;
+      bottom: 0;
+      right: 0;
+    }
   }
 
   h2{
@@ -102,6 +111,7 @@
     max-width: 500px;
     font-size: 18px;
     text-align: justify;
+    margin-bottom: 50px;
 
     b{
       color: $secondary-color;
@@ -111,6 +121,10 @@
   img{
     height: 300px;
   }
+}
+
+@media (max-width: 1200px){
+  .home-intro .intro-img{ display: none !important; }
 }
 
 .home-features{
@@ -137,6 +151,7 @@
     font-weight: 500;
     margin: 0;
     color: rgba(0,0,0,0.71);
+    line-height: 25px;
   }
 }
 
@@ -180,7 +195,11 @@
     width: 85%;
   }
 
-  div.col.m4{
+  div.left-rationale,
+  div.right-rationale,
+  div.twitter-logo{
+    width: 33%;
+    display: inline-block;
     height: 250px;
     position: relative;
   }
@@ -228,5 +247,42 @@
       text-align: left!important;
       left: 60px;
     }
+  }
+}
+
+@media (max-width: 1310px){
+  div.left-rationale,
+  div.right-rationale{
+    width: 40% !important;
+  }
+
+  div.twitter-logo{
+    width: 19% !important;
+    img{
+      height: 120px;
+      top: 65px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  div.left-rationale,
+  div.right-rationale{
+    width: 49% !important;
+  }
+  div.twitter-logo{width:0!important;}
+  div.twitter-logo img{
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  div.left-rationale,
+  div.right-rationale,
+  div.twitter-logo{
+    width: 100% !important;
+  }
+  div.twitter-logo img{
+    display: block !important;
   }
 }
