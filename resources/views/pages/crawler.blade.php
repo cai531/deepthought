@@ -5,37 +5,62 @@
 @stop
 
 @section("content")
-    <div class="container crawler-status">
-        <ul class="row">
-            <li class="col m3 s12"><i class="small mdi-action-alarm"></i><span></span></li>
-            <li class="col m3 s12"><i class="small mdi-file-file-download"></i><span>-</span></li>
-            <li class="col m3 s12"><i class="small mdi-file-folder"></i><span>-</span></li>
-            <li class="col m3 s12"><i class="small mdi-editor-insert-drive-file"></i><span>-</span></li>
-        </ul>
+    <div class="crawler row">
+        <h3 class="col s12">Crawler TPS</h3>
+        <img class="col s1" id="loading" src="{{Request::root()}}/img/loading.gif" alt="loading">
+        <div class="input-field col s12">
+            <select class="select-date">
+                <option value="" disabled selected>Select a date</option>
+            </select>
+        </div>
+        <div class="col s12 graph"></div>
     </div>
 @stop
 
 @section("footer")
+    <script src="{{Request::root()}}/js/bin/jquery.flot.min.js"></script>
+    <script src="{{Request::root()}}/js/bin/jquery.flot.time.js"></script>
     <script>
         $(document).ready(function () {
-            function getStatus() {
-                $.ajax({
-                    type: "GET",
-                    url: "api/crawler/status",
-                    contentType: "text/json",
-                    dataType: "json",
-                    success: function(data){
+            var $loading = $('#loading').hide();
+            $(document)
+                    .ajaxStart(function () {
+                        $loading.show();
+                    })
+                    .ajaxStop(function () {
+                        $loading.hide();
+                    });
 
-                    },
-                    error: function(xhr, status, error){
-                        if(xhr.status){
-                            console.log("Opps! Crawler is down.");
-                        }
+            $.ajax({
+                url: "{{Request::root()}}/api/s3/dates",
+                dataType: 'json',
+                success: function (response) {
+                    $.each(response, function (index, ele) {
+                        $(".select-date").append($("<option></option>").text(ele).val(ele))
+                    });
+                    $('.select-date').material_select();
+                }
+            });
+
+            var opts = {
+                series: {
+                    lines: {lineWidth: 3}
+                }
+            };
+            $(".select-date").change(function(){
+                var date = $(this).val();
+                $.ajax({
+                    url: "{{Request::root()}}/api/tps/" + date,
+                    dataType: 'json',
+                    success: function (data) {
+                        var series = [];
+                        $.each(data, function(key, value){
+                            series.push([key, parseInt(value)]);
+                        });
+                        $(".graph").plot([series], opts);
                     }
                 });
-            }
-
-            setInterval(getStatus, 1000);
+            });
         });
     </script>
 @stop

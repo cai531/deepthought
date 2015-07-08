@@ -8,8 +8,8 @@
           content="Deep Thought: A Research Project for event detection and data analysis currently in development">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===== Styles ======-->
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/animate.min.css"/>
+    <link rel="stylesheet" href="{{Request::root()}}/css/app.css">
+    <link rel="stylesheet" href="{{Request::root()}}/css/animate.min.css"/>
     <!--===== Page Specific Styles ======-->
     @yield("header")
 </head>
@@ -23,7 +23,7 @@
         <li class="logo"><a id="logo-container" href="/home" class="brand-logo">deep<br>thought</a></li>
         <li class="{{ Request::is('home*')?'active':'' }}"><a href="/home">Home</a></li>
         <li class="{{ Request::is('search*')?'active':'' }}"><a href="/search">Search</a></li>
-        <li class="{{ Request::is('trends*')?'active':'' }}"><a href="/trends">Trends</a></li>
+        <!--<li class="{{ Request::is('trends*')?'active':'' }}"><a href="/trends">Trends</a></li>-->
         <li class="{{ Request::is('crawler*')?'active':'' }}"><a href="/crawler">Crawler</a></li>
     </ul>
     @if (Request::path()=="home")
@@ -101,8 +101,8 @@
 
 <!--===== Scripts ======-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/bin/materialize.min.js"></script>
-<script src="js/app.js"></script>
+<script src="{{Request::root()}}/js/bin/materialize.min.js"></script>
+<script src="{{Request::root()}}/js/app.js"></script>
 <!--===== Page Specific Scripts ======-->
 @yield("footer")
 </body>

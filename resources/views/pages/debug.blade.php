@@ -49,7 +49,7 @@
             },
             xaxis: {
                 mode: "time",
-                timeformat: "%a, %e %b\n %I:%M %P",
+                timeformat: "%a, %e %b %I:%M %P",
                 minTickSize: [0.5, "hour"]
             }
         };

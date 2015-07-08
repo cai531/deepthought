@@ -5,5 +5,8 @@
 @stop
 
 @section("content")
-    hi
+    <form class="row" method="GET">
+        <input type="text" placeholder="Search" name="q" class="col s4">
+        <input type="submit" value="Submit" class="col s2">
+    </form>
 @stop
